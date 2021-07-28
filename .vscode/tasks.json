@@ -3,6 +3,18 @@
 {
     "version": "2.0.0",
     "tasks": [{
+        "label": "pxt deploy - No Docker",
+        "type": "shell",
+        "command": "export PXT_NODOCKER=1 && pxt deploy --local",
+        "group": "build",
+        "problemMatcher": [ "$tsc" ]
+    }, {
+        "label": "pxt build - No Docker",
+        "type": "shell",
+        "command": "export PXT_NODOCKER=1 && pxt build --local",
+        "group": "build",
+        "problemMatcher": [ "$tsc" ]
+    }, {
         "label": "pxt deploy",
         "type": "shell",
         "command": "pxt deploy --local",
