@@ -1,6 +1,12 @@
 
 > Open this page at [https://yokobond.github.io/pxt-si7021/](https://yokobond.github.io/pxt-si7021/)
 
+# pxt-si7021
+A package to use Si7021 Humidity and Temperature Sensor in MakeCode
+
+- Adafruit Si7021 Temperature & Humidity Sensor Breakout Board https://www.adafruit.com/product/3251
+- SparkFun Humidity and Temperature Sensor Breakout - Si7021 https://www.sparkfun.com/products/13763
+
 ## Use as Extension
 
 This repository can be added as an **extension** in MakeCode.
@@ -20,10 +26,16 @@ To edit this repository in MakeCode.
 
 ## Blocks preview
 
-This image shows the blocks code from the last commit in master.
-This image may take a few minutes to refresh.
+An example code to read humidity and temperature from USB
 
-![A rendered view of the blocks](https://github.com/yokobond/pxt-si7021/raw/master/.github/makecode/blocks.png)
+```blocks
+serial.redirectToUSB()
+basic.forever(function () {
+  serial.writeValue("humi", Si7021.readHumidity())
+  serial.writeValue("temp", Si7021.readTemperature())
+  basic.pause(100)
+})
+```
 
 #### Metadata (used for search, rendering)
 
